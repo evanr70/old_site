@@ -1,15 +1,11 @@
 build:
-	echo "Creating files"
-	echo "python compile.py"
+	@echo "Creating files"
 	python compile.py
-	echo "Completed"
+	@echo "Completed"
 	
-	echo "Committing files"
-	echo "git add --all"
+	@echo "Committing files"
 	git add --all
-	echo "git commit -m 'automatic commit'"
 	git commit -m "automatic commit"
-	echo "git push"
 	git push
 	
-	echo "Finished."
+	@echo "Finished."
