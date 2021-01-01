@@ -1,8 +1,12 @@
 from glob import glob
 from pathlib import Path
 
+
 input_directory = Path("_pages")
-output_directory = Path("static")
+
+# Play nicely with gh-pages
+output_directory = Path("docs")
+
 template = Path("_pages/_template.html")
 
 for old_output in output_directory.glob("*"):
