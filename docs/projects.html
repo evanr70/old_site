@@ -1,74 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/social-circles.min.css">
-
-
-
-    <title>Evan Roberts</title>
-  </head>
-  <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-    <nav id="nav-top" class="navbar navbar-dark bg-dark navbar-expand">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Evan Roberts</a>
-        <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="btn text-white" role="button" href="projects.html">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn text-white" role="button" href="research.html">Research</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!--template: post-->
-
-<div class="container">
-  <h1 class="display-4 py-4">Projects</h1>
-</div>
-
-<div class="jumbotron jumbotron-fluid bg-dark text-white">
-  <div class="container py-3">
-    <h2 class="display-6">Slack Magic</h2>
+ <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- Bootstrap CSS -->
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet"/>
+  <link href="css/main.css" rel="stylesheet"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+  <link href="css/social-circles.min.css" rel="stylesheet"/>
+  <title>
+   Evan Roberts
+  </title>
+  <link href="css/pygments.css" rel="stylesheet"/>
+  <style>
+   .error{color:red;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm//vega@5" type="text/javascript">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1" type="text/javascript">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm//vega-embed@6" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <script crossorigin="anonymous" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <nav class="navbar navbar-dark bg-dark navbar-expand" id="nav-top">
+   <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+     Evan Roberts
+    </a>
+    <ul class="nav navbar-nav ml-auto">
+     <li class="nav-item">
+      <a class="btn text-white" href="projects.html" role="button">
+       Projects
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="btn text-white" href="research.html" role="button">
+       Research
+      </a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  <!--template: post-->
+  <div class="container">
+   <h1 class="display-4 py-4">
+    Projects
+   </h1>
+  </div>
+  <div class="jumbotron jumbotron-fluid bg-dark text-white">
+   <div class="container py-3">
+    <h2 class="display-6">
+     Slack Magic
+    </h2>
     <p class="lead">
-      A package to add IPython magic to notify you when cells finish running, via Slack.
+     A package to add IPython magic to notify you when cells finish running, via Slack.
     </p>
     <div class="text-center">
-      <a href="https://github.com/evanr70/slack_magic" class="btn btn-primary" role="button" target="_blank">GitHub</a>
-      <a href="https://pypi.org/project/slack-magic/" class="btn btn-primary" role="button" target="_blank">PyPI</a>
+     <a class="btn btn-primary" href="https://github.com/evanr70/slack_magic" role="button" target="_blank">
+      GitHub
+     </a>
+     <a class="btn btn-primary" href="https://pypi.org/project/slack-magic/" role="button" target="_blank">
+      PyPI
+     </a>
     </div>
+   </div>
   </div>
-</div>
-
-<div class="jumbotron jumbotron-fluid bg-light">
-  <div class="container py-3">
-    <h2 class="display-6">altplotlib</h2>
+  <div class="jumbotron jumbotron-fluid bg-light">
+   <div class="container py-3">
+    <h2 class="display-6">
+     altplotlib
+    </h2>
     <p class="lead">
-      A package to provide recogniseable matplotlib commands (<code>.plot</code>, <code>.scatter</code>) for plotting with Altair
+     A package to provide recogniseable matplotlib commands (
+     <code>
+      .plot
+     </code>
+     ,
+     <code>
+      .scatter
+     </code>
+     ) for plotting with Altair
     </p>
     <div class="text-center">
-      <a href="https://github.com/evanr70/altplotlib" class="btn btn-primary" role="button" target="_blank">GitHub</a>
-      <a href="https://pypi.org/project/altplotlib/" class="btn btn-primary" role="button" target="_blank">PyPI</a>
+     <a class="btn btn-primary" href="https://github.com/evanr70/altplotlib" role="button" target="_blank">
+      GitHub
+     </a>
+     <a class="btn btn-primary" href="https://pypi.org/project/altplotlib/" role="button" target="_blank">
+      PyPI
+     </a>
     </div>
+   </div>
   </div>
-</div>
-
-
-
-
-  </body>
+ </body>
 </html>
