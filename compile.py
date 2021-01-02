@@ -9,10 +9,6 @@ output_directory = Path("docs")
 
 template = Path("_pages/_template.html")
 
-for old_output in output_directory.glob("*"):
-    if old_output.is_file():
-        old_output.unlink()
-
 with template.open() as f:
     template = f.read()
 
