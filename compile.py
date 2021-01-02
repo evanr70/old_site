@@ -28,7 +28,7 @@ for input_file, output_file in zip(input_files, output_files):
     with template_file.open() as f:
       template_data = f.read()
         
-    output_data = template.replace("{{{CONTENT}}}", input_data)
+    output_data = template_data.replace("{{{CONTENT}}}", input_data)
     
     with output_file.open("w") as f:
         f.write(output_data)
