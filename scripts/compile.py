@@ -42,9 +42,11 @@ def compile_page(input_file, output_directory):
     with output_file.open("w") as f:
         f.write(soup.prettify())
 
+
 def make_page(file_name):
     page_file = Path(file_name)
     compile_page(page_file, _page_output)
+
 
 def make_pages():
     page_files = _pages_directory.glob("*.html")
@@ -56,10 +58,12 @@ def make_post(file_name):
     post_file = Path(file_name)
     compile_page(post_file, _post_output)
 
+
 def make_posts():
     post_files = _post_directory.glob("*.html")
     for post in post_files:
         compile_page(post, _post_output)
+
 
 def update_post_index():
     post_file = _page_output / "posts.html"
@@ -89,10 +93,12 @@ def update_post_index():
     with post_file.open("w") as f:
         f.write(post_soup.prettify())
 
+
 def make_all():
     make_pages()
     make_posts()
     update_post_index()
+
 
 if __name__ == "__main__":
     make_all()
