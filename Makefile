@@ -1,12 +1,14 @@
 all: clean build commit push
 
+rebuild: clean build
+
 build:
 	@echo "Creating files"
 	python scripts/compile.py
 
 clean:
 	@echo "Removing old html files."
-	rm -f docs/*.html
+	rm -f docs/*.html docs/posts/*.html
 
 commit:
 	@echo "Committing files"

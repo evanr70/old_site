@@ -1,7 +1,7 @@
-from bs4 import BeautifulSoup, Comment
 import re
 from pathlib import Path
 
+from bs4 import BeautifulSoup, Comment
 
 _vega_pattern = re.compile("vega: (.*?)$")
 _vega_added = False
