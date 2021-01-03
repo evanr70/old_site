@@ -10,9 +10,9 @@ from templates import make_page
 
 _pages_directory = Path("_pages")
 _post_directory = Path("_posts")
-_page_output = Path("docs")
-_post_output = Path("docs/posts")
-_anchor_directory = Path().joinpath(*_post_output.parts[1:])
+_page_output = Path("pages")
+_post_output = Path("posts")
+_anchor_directory = Path("/") / _post_output
 
 _page_output.mkdir(parents=True, exist_ok=True)
 _post_output.mkdir(parents=True, exist_ok=True)
@@ -47,7 +47,7 @@ def make_posts():
     with post_file.open() as f:
         post_soup = BeautifulSoup(f, "html.parser")
     div = post_soup.find("div", id="content")
-    container = post_soup.new_tag("div", class_="container")
+    container = post_soup.new_tag("div", attrs={"class": "container"})
     div.append(container)
     ul = post_soup.new_tag("ul")
     container.append(ul)

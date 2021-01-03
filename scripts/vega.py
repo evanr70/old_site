@@ -25,7 +25,7 @@ def add_vega_head(soup):
 
 
 def add_vega_plots(soup):
-    asset_directory = Path("docs/assets")
+    asset_directory = Path("assets")
 
     vega_comments = soup.find_all(
         string=lambda text: isinstance(text, Comment) and ("vega:" in text)

@@ -5,10 +5,11 @@ rebuild: clean build
 build:
 	@echo "Creating files"
 	python scripts/compile.py
+	ln -s pages/index.html index.html
 
 clean:
 	@echo "Removing old html files."
-	rm -f docs/*.html docs/posts/*.html
+	rm -f pages/*.html posts/*.html index.html
 
 commit:
 	@echo "Committing files"
