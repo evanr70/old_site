@@ -8,7 +8,7 @@ def add_pygments_css(soup):
     tag = soup.new_tag(
         "link",
         attrs={
-            "href": "/docs/css/pygments.css",
+            "href": "../css/pygments.css",
             "rel": "stylesheet",
         },
     )

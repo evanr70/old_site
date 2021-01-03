@@ -12,6 +12,7 @@ _pages_directory = Path("_pages")
 _post_directory = Path("_posts")
 _page_output = Path("docs")
 _post_output = Path("docs/posts")
+_anchor_directory = Path().joinpath(*_post_output.parts[1:])
 
 _page_output.mkdir(parents=True, exist_ok=True)
 _post_output.mkdir(parents=True, exist_ok=True)
@@ -57,7 +58,7 @@ def make_posts():
         a_tag = post_soup.new_tag(
             "a",
             attrs={
-                "href": str(Path("/") / _post_output / post.name),
+                "href": str(_anchor_directory / post.name),
                 "class": "text-decoration-none",
             },
         )
