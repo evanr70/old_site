@@ -2,7 +2,7 @@ all: clean build commit push
 
 build:
 	@echo "Creating files"
-	python compile.py
+	python scripts/compile.py
 
 clean:
 	@echo "Removing old html files."
