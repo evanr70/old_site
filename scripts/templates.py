@@ -20,7 +20,7 @@ def get_template(input_data):
     return template
 
 
-def make_page(input_data):
+def make_page_from_template(input_data):
     template = get_template(input_data)
     output_data = template.replace("{{{CONTENT}}}", input_data)
     return BeautifulSoup(output_data, "html.parser")
