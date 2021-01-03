@@ -2,12 +2,18 @@
 
 Usage:
     py-static.py
+    py-static.py pages
+    py-static.py posts
+    py-static.py page <file>
+    py-static.py post <file>
+    py-static.py update-index
 """
 
 
 import re
 from glob import glob
 from pathlib import Path
+from docopt import docopt
 
 from bs4 import BeautifulSoup, Comment
 from syntax_highlighting import highlight_html
@@ -101,4 +107,19 @@ def make_all():
 
 
 if __name__ == "__main__":
-    make_all()
+    args = docopt(__doc__, version="0.0.0")
+  
+    if args["posts"]:
+        make_posts()
+        update_post_index()
+    elif args["pages"]:
+       make_pages()
+    elif args["page"]:
+        make_page(args["<file>"])
+    elif args["post"]:
+        make_post(args["<file>"])
+    elif args["update-index"]:
+        update_post_index()
+    else:
+        make_all()
+      
