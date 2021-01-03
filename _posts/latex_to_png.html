@@ -1,0 +1,42 @@
+<!--template: post-->
+<div class="container py-2">
+<h1 class="display-4">LaTeX equation to PNG</h1>
+<div class="lead">
+  A short script to convert LaTeX equations to <code>png</code> files.
+</div>
+
+<pre class="p-2"><code lang="python">
+import shutil
+import urllib
+
+import requests
+
+
+def get_image(latex_equation, file_format="png"):
+    url_base = (
+        "https://latex.codecogs.com/"
+        + file_format
+        + ".latex?"
+        + urllib.parse.quote("\\dpi{300} " + "\\bg_white ")
+    )
+
+    url = url_base + urllib.parse.quote(latex_equation)
+
+    r = requests.get(url, stream=True)
+    if r.status_code == 200:
+        with open("equation.{}".format(file_format), "wb") as f:
+            r.raw.decode_content = True
+            shutil.copyfileobj(r.raw, f)
+    return None
+
+
+if __name__ == "__main__":
+    print("Creating example equation")
+    get_image(r"x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}}")
+</code></pre>
+
+<div class="container py-3 text-center">
+    <img class="img" src="../assets/latex_to_png.png">
+</div>
+  
+</div>
