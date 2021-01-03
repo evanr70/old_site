@@ -61,7 +61,7 @@ def make_posts():
                 "class": "text-decoration-none",
             },
         )
-        a_tag.string = post.name
+        a_tag.string = post.name.replace(".html", "").replace("_", " ")
         li = post_soup.new_tag("li")
         li.append(a_tag)
         ul.append(li)
