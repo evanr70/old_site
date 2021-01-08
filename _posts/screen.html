@@ -1,0 +1,49 @@
+<!--template: nav_only-->
+<!--title: Using screen with SSH-->
+
+<div class="container py-2">
+	<h1 class="disp-4">Using <code>screen</code> to save your ssh sessions</h1>
+
+	<p>
+		When you're using <code>ssh</code> to run code on a remote server, if you lose your connection, you can lose a lot of work. Any scripts that are running in your session will quit and you'll have to start running them all over again.
+	</p>
+	
+	<p>
+		The solution to this problem is very simple and uses a tool which ships as standard with MacOS and many linux distributions. It's called <code>screen</code> and it makes it easy to separate the programs which you're running from the terminals and sessions you're running them in.
+	</p>
+	
+	<p>
+		The simplest syntax is just to use <code>screen</code> and start typing. If you get disconnected from your session, just sign back in to your server and type <code>screen -r</code> to get right back to where you left off.
+	</p>
+	
+	<p>
+		If you want to detach your <code>screen</code> session on purpose, press <code>ctrl + d</code>. To reconnect again, we use the same command as before, <code>screen -r</code>.
+	</p>
+	
+	<p>
+		What if you want to run multiple <code>screen</code> sessions at once? We need to keep track of them, so we give each one a name as we start them. Use <code>screen -S &lt;session_name&gt;</code> to open the session. Detach it with <code>ctrl + d</code>. To reattach our session we can now use <code>screen -r &lt;session_name&gt;</code>.
+	</p>
+	
+	<p>
+		If for some reason your <code>screen</code> session is still running in the background and you can't reconnect to it, use <code>screen -dr &lt;session_name&gt;</code> to detach and then reattach.
+	</p>
+	
+<pre class="p-2">
+<code lang="bash">
+ssh username@server.com
+screen -S my_session_name
+python long_running_program.py
+
+# Bad news! The connection died.
+
+ssh username@server.com
+screen -r my_session_name
+
+# We're back in our session! Nothing lost.
+</code>
+</pre>
+
+
+
+</div>
+

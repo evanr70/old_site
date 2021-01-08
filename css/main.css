@@ -5,7 +5,7 @@
   left: 0;
   z-index: 1000;
   display: block;
-  padding: 0px;
+  padding: 0;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   border-right: 1px solid #eee;
@@ -21,7 +21,7 @@
 @media (max-width: 767px) {
   .main {
     padding-right: 40px;
-    padding-left: 80px;  /*width + 40*/ 
+    padding-left: 80px;  /*width + 40*/
   }
 }
 
@@ -31,20 +31,20 @@
   font-size: 1.8em;
 }
 
-#nav-gh, #nav-twitter {
-  font-size: 1.4em;
-  color: black;
+.nav-gh, .nav-twitter {
+  font-size: 1.4em !important;
+  color: black !important;
 }
 
-#nav-pin {
-  font-size: 1.5em;
+.nav-pin {
+  font-size: 1.5em !important;
 }
 
-#nav-work, #nav-email {
-  font-size: 1.2em;
+.nav-work, .nav-email {
+  font-size: 1.2em !important;
 }
 
-#nav-top {
+.nav-top {
   z-index: 1001;
 }
 
@@ -54,4 +54,8 @@
 
 #small-width {
   width: 70px;
+}
+
+pre {
+  padding: 1em 3em;
 }
