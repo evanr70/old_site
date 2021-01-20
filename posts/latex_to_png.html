@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-  <title>
-   Generating images from LaTeX equations
-  </title>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet"/>
-  <title>
-   Evan Roberts
-  </title>
-  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet"/>
   <link href="../css/social-circles.css" rel="stylesheet"/>
   <link href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet"/>
   <link href="../css/main.css" rel="stylesheet"/>
   <title>
-   Evan Roberts
+   Generating images from LaTeX equations
   </title>
   <link href="../css/pygments.css" rel="stylesheet"/>
  </head>
  <body>
   <script crossorigin="anonymous" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
   </script>
-  <div>
-  </div>
   <nav class="navbar navbar-dark bg-dark navbar-expand" id="nav-top">
    <div class="container-fluid" id="nav-insert-point">
     <a class="navbar-brand" href="../pages/index.html">
      Evan Roberts
     </a>
-    <ul class="nav navbar-nav ml-auto">
+    <ul class="nav navbar-nav ml-auto nav-ul">
      <li class="nav-item">
       <a class="btn text-white" href="../pages/posts.html" role="button">
        Posts
@@ -49,21 +41,20 @@
     </ul>
    </div>
   </nav>
-  <div id="content">
-   <!--title: Generating images from LaTeX equations-->
-   <div class="container py-2">
-    <h1 class="display-4">
-     LaTeX equation to PNG
-    </h1>
-    <div class="lead">
-     A short script to convert LaTeX equations to
-     <code>
-      png
-     </code>
-     files.
-    </div>
-    <div class="highlight">
-     <pre><span></span><code><span class="kn">import</span> <span class="nn">shutil</span>
+  <!--title: Generating images from LaTeX equations-->
+  <div class="container py-2">
+   <h1 class="display-4">
+    LaTeX equation to PNG
+   </h1>
+   <div class="lead">
+    A short script to convert LaTeX equations to
+    <code>
+     png
+    </code>
+    files.
+   </div>
+   <div class="highlight">
+    <pre><span></span><code><span class="kn">import</span> <span class="nn">shutil</span>
 <span class="kn">import</span> <span class="nn">urllib</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -91,10 +82,9 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Creating example equation"</span><span class="p">)</span>
     <span class="n">get_image</span><span class="p">(</span><span class="sa">r</span><span class="s2">"x = a_0 + \frac</span><span class="si">{1}</span><span class="s2">{a_1 + \frac</span><span class="si">{1}</span><span class="s2">{a_2 + \frac</span><span class="si">{1}</span><span class="s2">{a_3 + a_4}}}"</span><span class="p">)</span>
 </code></pre>
-    </div>
-    <div class="container py-3 text-center">
-     <img class="img" src="../assets/latex_to_png.png"/>
-    </div>
+   </div>
+   <div class="container py-3 text-center">
+    <img class="img" src="../assets/latex_to_png.png"/>
    </div>
   </div>
  </body>

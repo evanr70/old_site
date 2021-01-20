@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-  <title>
-   Using screen with SSH
-  </title>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet"/>
-  <title>
-   Evan Roberts
-  </title>
-  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet"/>
   <link href="../css/social-circles.css" rel="stylesheet"/>
   <link href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet"/>
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet"/>
   <link href="../css/main.css" rel="stylesheet"/>
   <title>
-   Evan Roberts
+   Using screen with SSH
   </title>
   <link href="../css/pygments.css" rel="stylesheet"/>
  </head>
  <body>
   <script crossorigin="anonymous" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
   </script>
-  <div>
-  </div>
   <nav class="navbar navbar-dark bg-dark navbar-expand" id="nav-top">
    <div class="container-fluid" id="nav-insert-point">
     <a class="navbar-brand" href="../pages/index.html">
      Evan Roberts
     </a>
-    <ul class="nav navbar-nav ml-auto">
+    <ul class="nav navbar-nav ml-auto nav-ul">
      <li class="nav-item">
       <a class="btn text-white" href="../pages/posts.html" role="button">
        Posts
@@ -49,88 +41,87 @@
     </ul>
    </div>
   </nav>
-  <div id="content">
-   <!--title: Using screen with SSH-->
-   <div class="container py-2">
-    <h1 class="disp-4">
-     Using
-     <code>
-      screen
-     </code>
-     to save your ssh sessions
-    </h1>
-    <p>
-     When you're using
-     <code>
-      ssh
-     </code>
-     to run code on a remote server, if you lose your connection, you can lose a lot of work. Any scripts that are running in your session will quit and you'll have to start running them all over again.
-    </p>
-    <p>
-     The solution to this problem is very simple and uses a tool which ships as standard with MacOS and many linux distributions. It's called
-     <code>
-      screen
-     </code>
-     and it makes it easy to separate the programs which you're running from the terminals and sessions you're running them in.
-    </p>
-    <p>
-     The simplest syntax is just to use
-     <code>
-      screen
-     </code>
-     and start typing. If you get disconnected from your session, just sign back in to your server and type
-     <code>
-      screen -r
-     </code>
-     to get right back to where you left off.
-    </p>
-    <p>
-     If you want to detach your
-     <code>
-      screen
-     </code>
-     session on purpose, press
-     <code>
-      ctrl + d
-     </code>
-     . To reconnect again, we use the same command as before,
-     <code>
-      screen -r
-     </code>
-     .
-    </p>
-    <p>
-     What if you want to run multiple
-     <code>
-      screen
-     </code>
-     sessions at once? We need to keep track of them, so we give each one a name as we start them. Use
-     <code>
-      screen -S &lt;session_name&gt;
-     </code>
-     to open the session. Detach it with
-     <code>
-      ctrl + d
-     </code>
-     . To reattach our session we can now use
-     <code>
-      screen -r &lt;session_name&gt;
-     </code>
-     .
-    </p>
-    <p>
-     If for some reason your
-     <code>
-      screen
-     </code>
-     session is still running in the background and you can't reconnect to it, use
-     <code>
-      screen -dr &lt;session_name&gt;
-     </code>
-     to detach and then reattach.
-    </p>
-    <div class="highlight">
-     <pre><span></span><code>ssh username@server.com
+  <!--title: Using screen with SSH-->
+  <div class="container py-2">
+   <h1 class="disp-4">
+    Using
+    <code>
+     screen
+    </code>
+    to save your ssh sessions
+   </h1>
+   <p>
+    When you're using
+    <code>
+     ssh
+    </code>
+    to run code on a remote server, if you lose your connection, you can lose a lot of work. Any scripts that are running in your session will quit and you'll have to start running them all over again.
+   </p>
+   <p>
+    The solution to this problem is very simple and uses a tool which ships as standard with MacOS and many linux distributions. It's called
+    <code>
+     screen
+    </code>
+    and it makes it easy to separate the programs which you're running from the terminals and sessions you're running them in.
+   </p>
+   <p>
+    The simplest syntax is just to use
+    <code>
+     screen
+    </code>
+    and start typing. If you get disconnected from your session, just sign back in to your server and type
+    <code>
+     screen -r
+    </code>
+    to get right back to where you left off.
+   </p>
+   <p>
+    If you want to detach your
+    <code>
+     screen
+    </code>
+    session on purpose, press
+    <code>
+     ctrl + d
+    </code>
+    . To reconnect again, we use the same command as before,
+    <code>
+     screen -r
+    </code>
+    .
+   </p>
+   <p>
+    What if you want to run multiple
+    <code>
+     screen
+    </code>
+    sessions at once? We need to keep track of them, so we give each one a name as we start them. Use
+    <code>
+     screen -S &lt;session_name&gt;
+    </code>
+    to open the session. Detach it with
+    <code>
+     ctrl + d
+    </code>
+    . To reattach our session we can now use
+    <code>
+     screen -r &lt;session_name&gt;
+    </code>
+    .
+   </p>
+   <p>
+    If for some reason your
+    <code>
+     screen
+    </code>
+    session is still running in the background and you can't reconnect to it, use
+    <code>
+     screen -dr &lt;session_name&gt;
+    </code>
+    to detach and then reattach.
+   </p>
+   <div class="highlight">
+    <pre><span></span><code>ssh username@server.com
 screen -S my_session_name
 python long_running_program.py
 
@@ -141,7 +132,6 @@ screen -r my_session_name
 
 <span class="c1"># We're back in our session! Nothing lost.</span>
 </code></pre>
-    </div>
    </div>
   </div>
  </body>
